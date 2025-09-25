@@ -7,10 +7,7 @@ using namespace TelCoColorCoder;
 
 void testNumberToPair(int pairNumber, MajorColor expectedMajor, MinorColor expectedMinor) 
 {
-    ColorPair colorPair(
-        (MajorColor)((pairNumber - 1) / numberOfMinorColors),
-        (MinorColor)((pairNumber - 1) % numberOfMinorColors)
-    );
+    ColorPair colorPair((MajorColor)((pairNumber - 1) / numberOfMinorColors),(MinorColor)((pairNumber - 1) % numberOfMinorColors));
     std::cout << "Got pair " << colorPair.toString() << std::endl;
     assert(colorPair.getMajorColor() == expectedMajor);
     assert(colorPair.getMinorColor() == expectedMinor);
